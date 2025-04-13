@@ -23,7 +23,7 @@ import {IEntryPoint} from "lib/account-abstraction/contracts/interfaces/IEntryPo
         
         // sign it
 
-        uint256 ANVIL_DEFAULT_KEY; //private Key
+        uint256 ANVIL_DEFAULT_KEY=vm.envUint("ANVIL_DEFAULT_KEY");
         uint8 v ; bytes32 r ; bytes32 s;
         if(block.chainid==31337){
             (v , r ,  s)=vm.sign(ANVIL_DEFAULT_KEY , digest);
